@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="24" fill="url(#bg)"/>
+  <g fill="white">
+    <!-- Microphone -->
+    <rect x="52" y="24" width="24" height="40" rx="12"/>
+    <path d="M40 54 v10 a24 24 0 0 0 48 0 v-10" fill="none" stroke="white" stroke-width="6" stroke-linecap="round"/>
+    <line x1="64" y1="88" x2="64" y2="100" stroke="white" stroke-width="6" stroke-linecap="round"/>
+    <!-- Text lines -->
+    <rect x="30" y="104" width="68" height="6" rx="3" opacity="0.8"/>
+  </g>
+</svg>
