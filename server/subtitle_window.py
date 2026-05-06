@@ -194,7 +194,8 @@ class SubtitleWindow(QWidget):
         # Calculate needed height based on number of tabs
         base_height = 60
         per_tab_height = 80
-        new_height = base_height + max(1, len(self.tab_widgets)) * per_tab_height
+        tab_count = len(self.tab_widgets)
+        new_height = base_height + (tab_count if tab_count > 0 else 0) * per_tab_height
         new_height = min(new_height, 400)  # Max height
         self.resize(self.width(), new_height)
 

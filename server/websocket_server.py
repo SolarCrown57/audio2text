@@ -111,7 +111,8 @@ class WebSocketServer:
                         await session.process_audio(message)
 
         except websockets.exceptions.ConnectionClosed:
-            print(f"[Tab {tab_id}] Connection closed")
+            tab_label = tab_id or 'unknown'
+            print(f"[Tab {tab_label}] Connection closed")
         except Exception as e:
             print(f"[Tab {tab_id}] Error: {e}")
         finally:
