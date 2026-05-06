@@ -30,8 +30,13 @@ class SpeechRecognizerCallback(RecognitionCallback):
         try:
             sentence = result.get_sentence()
             if sentence:
-                text = sentence.get('text', '')
-                is_end = sentence.get('end_time') is not None
+                # DashScope SDK 返回 Sentence 对象（属性访问），兼容 dict 类型
+                if hasattr(sentence, 'get'):
+                    text = sentence.get('text', '')
+                    is_end = sentence.get('end_time') is not None
+                else:
+                    text = getattr(sentence, 'text', '')
+                    is_end = getattr(sentence, 'end_time', None) is not None
 
                 if text:
                     self.current_sentence = text
